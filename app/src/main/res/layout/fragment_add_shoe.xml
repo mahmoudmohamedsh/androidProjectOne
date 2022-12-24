@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.udacity.shoestore.utils.Utils" />
+
+        <variable
+            name="myData"
+            type="com.udacity.shoestore.models.Shoe" />
+    </data>
+    <!--  can be implement with linear vert and hor without any problem-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView4"
+            style="@style/welcome_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="add shoe" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_marg"
+            android:layout_marginBottom="@dimen/small_marg"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/name_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small_marg"
+                android:layout_marginTop="@dimen/small_marg"
+                android:layout_marginRight="@dimen/small_marg"
+                android:text="@string/shoe_name" />
+
+            <EditText
+                android:id="@+id/name_editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small_marg"
+                android:layout_marginRight="@dimen/small_marg"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/shoe_name"
+                android:inputType="textPersonName"
+                android:text="@={myData.name}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_marg"
+            android:layout_marginBottom="@dimen/small_marg"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/company_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small_marg"
+                android:layout_marginTop="@dimen/small_marg"
+                android:layout_marginRight="@dimen/small_marg"
+                android:text="@string/Company" />
+
+            <EditText
+                android:id="@+id/company_editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small_marg"
+                android:layout_marginRight="@dimen/small_marg"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/Company"
+                android:inputType="textPersonName"
+                android:text="@={myData.company}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_marg"
+            android:layout_marginBottom="@dimen/small_marg"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/size_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small_marg"
+                android:layout_marginTop="@dimen/small_marg"
+                android:layout_marginRight="@dimen/small_marg"
+                android:text="@string/shoe_size" />
+
+            <EditText
+                android:id="@+id/size_editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small_marg"
+                android:layout_marginRight="@dimen/small_marg"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/shoe_size"
+                android:inputType="textPersonName"
+                android:text="@={Utils.doubleToString(myData.size)}" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_marg"
+            android:layout_marginBottom="@dimen/small_marg"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/Description_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small_marg"
+                android:layout_marginTop="@dimen/small_marg"
+                android:layout_marginRight="@dimen/small_marg"
+                android:text="@string/shoe_des" />
+
+            <EditText
+                android:id="@+id/Description_editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/small_marg"
+                android:layout_marginRight="@dimen/small_marg"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/shoe_des"
+                android:inputType="textPersonName"
+                android:text="@={myData.description}" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/add_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add" />
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@android:string/cancel" />
+
+
+    </LinearLayout>
+
+</layout>
